@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <title>關於小島-小島牙醫診所</title>
+    <style>
+         *{
+            list-style: none;
+            font-family: "Noto Sans CJK TC", "Microsoft JhengHei", PingFang, STHeiti, sans-serif, serif;
+        }
+        .body{
+            background-color: #F9F9F9;
+        }
+        .main-header{
+            width: 100%;
+            background-color: #FFFFFF;
+            box-shadow: -10px 0 10px 	#a5a5a5;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+        }
+        .main-header .container{
+            display: flex;
+            align-items: center;
+            /* padding: 3px; */
+            max-width: 1200px;
+            margin: auto;
+            /* border: 1px solid red; */
+        }
+        .main-header .logo{
+            width: 200px;
+            height: 50px;
+            /* border: 1px solid red; */
+        }
+        .main-header .logo img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .main-header .main-nav{
+            margin: 0px 0px 0px 300px;
+            /* border: 1px solid red; */
+        }
+        .main-header .main-nav a{
+            text-decoration: none;
+            color: #5B5A5A;
+            padding: 14px 1em;
+            /* border: 1px solid red; */
+        }
+        .main-header .main-nav a:hover{
+            background-color: #85BDCE;
+            color: #FFFFFF;
+        }
+        .main-header .member{
+            display: flex;
+            border: none;
+            background-color: #FFFFFF;
+            padding: 10px 20px;
+            /* border: 1px solid red; */
+        }
+        .banner{
+            margin: auto;
+            height: 300px;
+            /* border: 1px solid red; */
+        }
+        .banner img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .banner .title{
+            width: 10%;
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            font-size: 16px;
+            color: #494949;
+            text-align: center;
+            position: relative;
+            right: 450px;
+            top: -160px;
+            z-index: 1;
+            line-height: 1.5;
+            /* border: 1px solid red; */
+        }
+        .banner span{
+            font-size: 30px;
+        }
+        .path-wrap{
+            padding: 10px 0;
+            margin: 10px 10px ;
+            /* border: 1px solid red; */
+        }
+        .path{
+            width: 90%;
+            margin: auto;
+            display: flex;
+            /* margin-bottom: 10px; */
+        }
+        .path li{
+            padding: 0 20px;
+        }
+        .path a{
+            text-decoration: none;
+            color: #acacac;
+        }
+        .path a:hover{
+            color: #85BDCE;
+        }
+        .path li + li{
+            padding-left: 0;
+        }
+        .path li + li :before{
+            content: '>';
+            color: #acacac;
+            margin-right: 20px;
+        }
+        .about{
+            max-width: 1200px;
+            display: flex;
+        }
+        .about-logo{
+            display: flex;
+            margin-left: 200px;
+            /* border: 1px solid red; */
+        }
+        .about-logo img{
+            width: 100%;
+            padding: 30px 30px 30px 100px;
+        }
+        .about-logo .text{
+            display: flex;
+            flex-wrap: wrap;
+            line-height: 1.5;
+            font-size: 18px;
+            color: #777676;
+            padding: 10px 10px;
+            /* border: 1px solid red; */
+        }
+        .about-logo h3{
+            font-size: 20px;
+            margin: 0 0 30px 0;
+            border-bottom: 2px solid #158AAF;
+        }
+        .about .item{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+            vertical-align: middle;
+            /* border: 1px solid red; */
+            margin-left: 250px;
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+        .about-card{
+            width: 174px;
+            height: 174px;
+            border-radius: 50%;
+            box-shadow: 3px 3px 3px 	#c7c7c7;
+            margin: 50px;
+            /* border: 1px solid red; */
+        }
+        .about-card img{
+            width: 100%;
+            vertical-align: auto;
+        }   
+        .about-card p{
+            font-size: 18px;
+            text-align: center;
+            padding: 20px;
+            color: #777676;
+        }
+        .main-footer{
+            padding: 60px 0 0 0 ;
+            background-color: #075E79;
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            width: 100%;
+        }
+        .main-footer .container{
+            display: flex;
+            width: 1200px;
+            margin: auto;
+        }
+        .footer-item img{
+            width: 100%;
+        }
+        .footer-item{
+            width: 0;
+            flex-grow: 1;
+            margin: 0 50px;
+        }
+        .footer-item h4{
+            color: #F5F5F5;
+            font-size: 20px;
+            margin-bottom: .5em;
+            padding-bottom: .5em;
+            border-bottom: 1px dotted #F5F5F5;
+        }
+        .footer-item p{
+            font-size: 14px;
+            color: #F5F5F5;
+            text-align: start;
+            line-height: 2;
+        }
+        .footer-btn{
+            background-color: #40A0BE;
+            margin: auto;
+            padding: 10px 15px 10px 15px;
+            border-radius: 20px;
+            position: relative;
+            right: 250px;
+            top: 80px;
+            z-index: 1;
+            box-shadow: 1px 1px 2px #686767
+        }
+        .footer-btn:hover{
+            background-color: #158AAF;
+            transition: .5s;
+        }
+        .footer-btn a:hover{
+            background-color: #158AAF;
+            color: #FFFFFF;
+            transition: .5s;
+        }
+        .footer-btn a{
+            color: #FFFFFF;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .conpyright{
+            width: 100%;
+            text-align: center;
+            margin: 50px 0 0;
+            padding: 10px 0px;
+            background-color: #11495B;
+            color: #D0D0D0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-header">
+        <div class="container">
+            <a href="http://127.0.0.1:5500/" class="logo">
+                <img src="/pic/logo.png" alt="小島牙醫診所">
+            </a>
+            <nav class="main-nav">
+                 <a href="http://127.0.0.1:5500/about.html">關於小島</a>
+                 <a href="http://127.0.0.1:5500/teme.html">醫療團隊</a>
+                 <a href="http://127.0.0.1:5500/service.html">治療項目</a>
+                 <a href="http://127.0.0.1:5500/reserve.html">門診預約</a>
+                 <a href="http://127.0.0.1:5500/news.html">最新消息</a>
+                 <a href="http://127.0.0.1:5500/article_list.html">牙科小學堂</a>
+            </nav>
+            <a href="http://127.0.0.1:5500/login.html" class="member">
+                <img src="/pic/member.png" alt="會員專區">
+            </a>
+        </div>
+    </div>
+    <div class="banner">
+        <img src="/pic/head-banner.png" alt="關於小島">
+        <div class="title">
+            <h1>About Islands<br><span>關於小島</span></h1>
+        </div>
+    </div>
+    <div class="path-wrap">
+        <ol class="path">
+            <li><a href="http://127.0.0.1:5500/">首頁</a></li>
+            <li><a href="#">關於小島</a></li>
+        </ol>
+    </div>
+    <div class="about">
+        <div class="wrap">
+            <div class="about-logo">
+                <img src="/pic/logo_baout.png" alt="logo">
+                <div class="text">
+                    <h3>經營理念</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, delectus officiis ipsum in eum cumque quis eos ab ducimus odio totam animi ipsam molestiae. Cupiditate ipsam iste dignissimos reprehenderit consequatur, veniam delectus mollitia illum sapiente culpa assumenda laboriosam sunt voluptatum excepturi tenetur labore ipsa optio deserunt! Voluptates perferendis aspernatur autem distinctio vitae, dignissimos vero itaque quae quasi. Vel, facere molestias.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="about-card">
+                    <img style="border-radius: 50%;" src="pic/about-office.jpg" alt="看診環境">
+                    <p>✓ 舒適看診環境</p>
+                </div>
+                <div class="about-card">
+                    <img style="border-radius: 50%;" src="pic/about-talk.jpg" alt="免費諮詢">
+                    <p>✓ 免費療程諮詢</p>
+                </div>
+                <div class="about-card">
+                    <img style="border-radius: 50%;" src="pic/about-teme.jpg" alt="本院團隊">
+                    <p>✓ 優秀醫療團隊</p>
+                </div>
+                <div class="about-card">
+                    <img style="border-radius: 50%;" src="pic/about-women.jpg" alt="孕婦看診">
+                    <p>✓ 安心孕婦看診</p>
+                </div>
+                <div class="about-card">
+                    <img style="border-radius: 50%;" src="pic/about-redress.jpg" alt="美學矯正">
+                    <p>✓ 多元矯正專科</p>
+                </div>
+                <div class="about-card">
+                    <img style="border-radius: 50%;" src="pic/children teeth.jpg" alt="兒童療程">
+                    <p>✓ 兒童醫療專科</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-footer">
+        <div class="container">
+            <div class="fotter-item">
+                <a href="http://127.0.0.1:5500/">
+                    <img src="pic/logo_footer.png" alt="小島牙醫診所">
+                </a>
+            </div>
+            <div class="footer-item">
+                <h4>診所地址</h4>
+                <p>桃園市中壢區復興路oo號<br>(中壢火車站步行約10分鐘)</p>
+            </div>
+            <div class="footer-item">
+                <h4>看診時間</h4>
+                <p>週一至週五 <br>09:00~12:00<br>14:00~18:00<br>18:30~21:00
+                <br>週六、週日、國定假日休診</p>
+            </div>
+            <div class="footer-item">
+                <h4>聯絡我們</h4>
+                <p>Tel：03-12345678<br>免付費諮詢專線：<br>0800-123000</p>
+            </div>
+            <div class="footer-btn">
+                <a href="http://127.0.0.1:5500/reserve.html">立即預約</a>
+            </div>
+        </div>
+        <div class="conpyright">
+            Copyright &copy; 2022
+            小島牙醫診所
+        </div>
+    </div>
+</body>
+</html>
